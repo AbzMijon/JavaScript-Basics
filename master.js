@@ -22,3 +22,31 @@ const resultAccount = () => {
     }
 }
 resultAccount();
+
+
+// Task with big DOM Arrays
+const bigArr = [ [1, 2, 3, -4, 5, 6] , [-1, 99, 13, -13, -32] ];
+console.log(bigArr[0][2]);
+const oneBigArr = bigArr[0].concat(bigArr[1]);
+const bigArrFilter = oneBigArr.filter(elem => elem <= 0);
+console.log(bigArrFilter);
+
+//Task with bad words (filter)
+const badWords = ['fuck', 'bitch', 'idiot'];
+let userStr = 'go fuck youself'
+let userStrArr = userStr.split(' ');
+let resultUserStr = userStrArr.filter(elem => {
+    return !badWords.includes(elem);
+})
+console.log(resultUserStr.join(' '));
+
+//Task with bad words (map)
+const badword2 = ['badWord', 'badword'];
+let userStr2 = 'go badword youself'
+userStr2 = userStr2.split(' ');
+const userStr2Filter = userStr2.map(elem => {
+    if(badword2.includes(elem)) return '#'.repeat(elem.length);
+    return elem;
+})
+console.log(userStr2Filter.join(' '));
+
