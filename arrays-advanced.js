@@ -29,7 +29,6 @@ console.log(numbersDivide2);
 //Task 1 ------------
 
 //Task 2
-
 //With Filter ----
 const badWords = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']; 
 let userMessage = prompt('Enter message to your friend!');
