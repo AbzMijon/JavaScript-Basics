@@ -17,9 +17,39 @@ console.log(numbersPositive);
 //Task 4 ---------
 
 //Task 5 ------------------
-const findNumbers = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5];
+const findNumbers = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5]; //Arrow Function
 let numbersDivide = findNumbers.find(num => num % 2 === 0);
 console.log(numbersDivide);
+const findNumbers2 = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5]; //Function Declaration
+let numbersDivide2 = findNumbers2.find(function(num) { num % 2 === 0});
+console.log(numbersDivide2);
 
-const obj = {a:'1' , b:'2' , c:'3'};
-console.log(obj);
+//Advanced Level ==========================
+
+//Task 1 ------------
+
+//Task 2
+
+//With Filter ----
+const badWords = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y']; 
+let userMessage = prompt('Enter message to your friend!');
+let userMessageArrays = userMessage.split('');
+let userMessageResult = userMessageArrays.filter(elem => {
+    return !badWords.includes(elem);
+})
+console.log(userMessageResult.join(''));
+//With Map ----
+const badWords2 = ['idiot', 'blunt', 'badWord'];
+let userMessage2 = prompt('Enter message to your friend!');
+let userMessage2Arrays = userMessage2.split(' ');
+let userMessage2Result = userMessage2Arrays.map(elem => {
+    if(badWords2.includes(elem)) {
+        return '#'.repeat(elem.length);
+    }
+    return elem;
+})
+console.log(userMessage2Result.join(' '));
+//With Replace ----
+let userMessage3 = prompt('Enter message to your friend!');
+let userMessage3Result = userMessage3.replace(/[aeiouy]/gi, '');
+console.log(userMessage3Result);
