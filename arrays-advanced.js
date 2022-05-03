@@ -14,9 +14,14 @@ let numbersPositive = filterNumbers.filter(num => num > 0); //Arrow Function
 let numbersPositive2 = filterNumbers.filter(function (num) {num >= 0}); //Function Declaration
 console.log(numbersPositive);
 
-//Task 4 ---------
+//Task 4
+const fibonacciSum = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987];
+const fibonacciSumResult = fibonacciSum.reduce((prev , next) => prev + next, 0);
+const fibonacciSum2Result = fibonacciSum.reduce(function(prev , next) {prev + next}, 0);
+console.log(fibonacciSumResult);
+console.log(fibonacciSum2Result);
 
-//Task 5 ------------------
+//Task 5
 const findNumbers = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5]; //Arrow Function
 let numbersDivide = findNumbers.find(num => num % 2 === 0);
 console.log(numbersDivide);
@@ -26,7 +31,41 @@ console.log(numbersDivide2);
 
 //Advanced Level ==========================
 
-//Task 1 ------------
+//Task 1
+const students = [];
+const Student = function(name, rate , salary) {
+    this.name = name;
+    this.rate = rate;
+    this.salary = salary;
+    students.push(this);
+}
+const newStudent1 = new Student('Валентин', 'A', 3600);
+const newStudent2 = new Student('Ярослав', 'A', 2500);
+const newStudent3 = new Student('Егор', 'A', 2200);
+const newStudent4 = new Student('Андрей', 'B', 1600);
+const newStudent5 = new Student('Влад', 'C', 1400);
+console.log(students);
+
+const groupCredutSum = students.reduce((total , item) => {
+    switch(item.rate) {
+        case 'A':
+            total = total + (item.salary * 12);
+            break;
+        case 'B':
+            total = total + (item.salary * 9);
+            break;
+        case 'C':
+            total = total + (item.salary * 6);
+            break;
+        case 'D':
+            break;
+        default:
+            'Error 404';
+    }
+    return total;
+} ,0) 
+console.log(`Your group have credits on sum: ${groupCredutSum}`); 
+console.log( (3600 * 12) + (2500 * 12) + (2200 * 12) + (1600 * 9) + (1400 * 6) ); //Проверка ;)
 
 //Task 2
 //With Filter ----
@@ -52,3 +91,11 @@ console.log(userMessage2Result.join(' '));
 let userMessage3 = prompt('Enter message to your friend!');
 let userMessage3Result = userMessage3.replace(/[aeiouy]/gi, '');
 console.log(userMessage3Result);
+
+//Task 3 ----------
+
+//Task 4
+let highAndLow = "1 2 3 4 5"; // return "5 1"
+highAndLow = highAndLow.split(' ');
+const highAndLowResult = Math.max(...highAndLow) + ' ' +  Math.min(...highAndLow); //С codewars узнал такое решение)
+console.log(highAndLowResult);
