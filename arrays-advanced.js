@@ -92,7 +92,13 @@ let userMessage3 = prompt('Enter message to your friend!');
 let userMessage3Result = userMessage3.replace(/[aeiouy]/gi, '');
 console.log(userMessage3Result);
 
-//Task 3 ----------
+//Task 3
+const userStrRepeat = 'Abcde';
+const userStrRepeatArr = userStrRepeat.split('');
+const result = userStrRepeatArr.map((elem, i) => {
+    return elem[0].toUpperCase() + elem.repeat(i);
+})
+console.log(result.join(''));
 
 //Task 4
 let highAndLow = "1 2 3 4 5"; // return "5 1"
@@ -100,14 +106,14 @@ highAndLow = highAndLow.split(' ');
 const highAndLowResult = Math.max(...highAndLow) + ' ' +  Math.min(...highAndLow); //С codewars узнал такое решение)
 console.log(highAndLowResult);
 
-//isIsogramm
-let userStr = 'hello';
-userStr = userStr.split('');
-let trueArr = [];
-const userStrFilter = userStr.filter(elem => {
-    if(!trueArr.includes(elem)) {
-        return trueArr.push(elem);
+//Task 5
+let userStrIsogramm = 'hello';
+userStrIsogramm = userStrIsogramm.split('');
+let resultIsogrammArr = [];
+const isogrammFilter = userStrIsogramm.filter(elem => {
+    if(!resultIsogrammArr.includes(elem)) {
+        resultIsogrammArr.push(elem);
     }
-})
-if(userStr.join('') === trueArr.join('')) console.log(true);
-else console.log(false);
+});
+if (userStrIsogramm.join('') === resultIsogrammArr.join('')) console.log(`Word ${userStrIsogramm.join('')} - Isogramm !`);
+else console.log(`Word ${userStrIsogramm.join('')} - NOT a Isogramm..`);
