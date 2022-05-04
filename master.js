@@ -51,40 +51,40 @@ const userStr2Filter = userStr2.map(elem => {
 console.log(userStr2Filter.join(' '));
 
 //Task about array of items in shops and they sum with reduce
-/* const productsList = ['apple', 'banana', 'crisp', 'potato', 'tomato', 'chicken', 'fish', 'salat', 'water'];
-const basket = [];
-let userProducts = prompt('Enter what products you want !!!SPACE!!!');
-userProducts = userProducts.split(' ');
-const productsFilter = userProducts.map(elem => {
-    if (productsList.includes(elem)) {
-        return basket.push(elem);
-    }
-})
-console.log(basket);
- */
 const productsList = {
-    foot: {
         fish: 26,
         meat: 46,
         crips: 1,
         banana: 1,
         apple: 0.5,
         potato: 1.5,
-    },
-    drink: {
         cola: 2,
         fanta: 2,
         water: 1,
         juice: 1.5,
         bear: 3,
-    }
+        phone: 245,
+        pc: 2585,
+        book: 2.5,
 }
 const basket = [];
 let userProducts = prompt('Enter what products you want !!!SPACE!!!');
 userProducts = userProducts.split(' ');
 const productsFilter = userProducts.map(elem => {
-    if (productsList.includes(elem)) {
+    if (Object.keys(productsList).includes(elem)) {
         return basket.push(elem);
     }
 })
 console.log(basket);
+
+//Isogramm
+let someStr = 'helo';
+someStr = someStr.split('');
+let resultArr = [];
+const someStrFilter = someStr.filter(elem => {
+    if(!resultArr.includes(elem)) return resultArr.push(elem);
+})
+if (someStr.join('') === someStrFilter.join('')) {
+    console.log(true);
+}
+else console.log(false);
